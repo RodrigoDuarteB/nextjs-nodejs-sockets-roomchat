@@ -1,14 +1,15 @@
 import React, { FC, useRef } from 'react'
 import { EVENTS } from '../config/sockets'
 import { useSockets } from '../context/socket.context'
+import styles from '../styles/Room.module.css'
 
 interface IProps {
 
 }
 
 const Rooms: FC<IProps> = (props) => {
-    const { socket, rooms } = useSockets()
-    const newRoomRef = useRef(null)
+    const { socket, rooms, roomId } = useSockets()
+    const newRoomRef = useRef<any>(null)
 
     function createRoom() {
         const roomName = newRoomRef.current.value || ''
@@ -19,22 +20,36 @@ const Rooms: FC<IProps> = (props) => {
         }
     }
 
+    function joinRoom(key: string) {
+        if(key !== roomId){
+            socket.emit(EVENTS.CLIENT.JOIN_ROOM, key)
+        }
+    }
+
     return (
-        <nav>
-            <div className="">
+        <nav className={styles.wrapper}>
+            <div className={styles.createRoomWrapper}>
                 <input type="text" placeholder='Room Name' ref={newRoomRef}/>
-                <button onClick={createRoom}>Create Room</button>
+                <button className="cta" onClick={createRoom}>Create Room</button>
             </div>
 
+            <ul className={styles.roomList}>
             {
                 Object.keys(rooms).map(key => {
                     return (
-                        <div className="" key={key}>
-                            {rooms[key].name}
+                        <div key={key}>
+                            <button 
+                                onClick={() => joinRoom(key)}
+                                disabled={roomId === key}
+                                title='Join'
+                            >
+                                {rooms[key].name}
+                            </button>
                         </div>
                     )
                 })
             }
+            </ul>
         </nav>
     )
 }

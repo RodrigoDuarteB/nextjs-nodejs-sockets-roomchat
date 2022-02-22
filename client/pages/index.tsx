@@ -1,7 +1,9 @@
 import React, { FC, useRef } from 'react'
 import Messages from '../components/Messages'
 import Rooms from '../components/Rooms'
+import UserInfo from '../components/UserInfo'
 import { useSockets } from '../context/socket.context'
+import styles from '../styles/Home.module.css'
 
 interface IProps {
 
@@ -9,7 +11,7 @@ interface IProps {
 
 const Home: FC<IProps> = (props) => {
     const { socket, username, setUsername } = useSockets()
-    const usernameRef = useRef(null)
+    const usernameRef = useRef<any>(null)
 
     function handleUsername() {
         const value = usernameRef.current.value
@@ -22,13 +24,18 @@ const Home: FC<IProps> = (props) => {
     return (
         <div>
             {!username ?
-                <div className="">
-                    <input type="text" placeholder='Username' ref={usernameRef}/>
-                    <button onClick={handleUsername}>START</button>
+                <div className={styles.usernameWrapper}>
+                    <div className={styles.usernameInner}>
+                        <input type="text" placeholder='Username' ref={usernameRef}/>
+                        <button className='cta' onClick={handleUsername}>START</button>
+                    </div>
                 </div>
                 :
-                <div className="">
-                    <Rooms />
+                <div className={styles.container}>
+                    <div>
+                        <UserInfo />
+                        <Rooms />
+                    </div>
                     <Messages />
                 </div>
             }

@@ -1,4 +1,7 @@
 import React, { FC, useRef } from 'react'
+import Button from '../components/Button'
+import Container from '../components/Container'
+import Input from '../components/Input'
 import Messages from '../components/Messages'
 import Rooms from '../components/Rooms'
 import UserInfo from '../components/UserInfo'
@@ -20,6 +23,27 @@ const Home: FC<IProps> = (props) => {
             localStorage.setItem('username', value)
         }
     }
+
+    return (
+        <div className={styles.container}>
+            
+            <Container style={{ display: 'flex', flexDirection: 'column' }}>
+                
+                <div className={styles.formContainer}>
+                    <Input 
+                        placeholder='Ex: Rodrigo'
+                    />
+
+                    <Button 
+                        text='Crear Usuario'
+                        color='#8A2BE2'
+                        textColor='white'
+                        onClick={() => {}}                
+                    />
+                </div>
+            </Container>
+        </div>
+    )
 
     return (
         <div>

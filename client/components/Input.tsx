@@ -1,5 +1,6 @@
 import React, { FC, HTMLInputTypeAttribute } from 'react'
 import { Props } from '../utils/interfaces'
+import styles from './Input.module.css'
 
 interface IProps extends Props {
     placeholder: string
@@ -14,16 +15,16 @@ const Input: FC<IProps> = (props) => {
             <label htmlFor="">{props.label}</label>
             {
                 !props.textArea ?
-                    <input type={props.type} placeholder={props.placeholder}/>
+                    <input type={props.type} placeholder={props.placeholder} className={styles.input} style={props.style}/>
                 :
-                    <textarea placeholder={props.placeholder}></textarea>
+                    <textarea placeholder={props.placeholder} className={styles.input} style={props.style}></textarea>
             }
         </div>
     ) : (
         !props.textArea ?
-            <input type={props.type} placeholder={props.placeholder}/>
+            <input type={props.type} placeholder={props.placeholder} className={styles.input} style={props.style}/>
         :
-            <textarea placeholder={props.placeholder}></textarea>
+            <textarea placeholder={props.placeholder} className={styles.input} style={props.style}></textarea>
     )
 }
 

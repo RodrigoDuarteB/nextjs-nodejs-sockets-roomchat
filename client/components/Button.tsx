@@ -13,13 +13,15 @@ interface IProps extends Props {
 }
 
 const Button: FC<IProps> = (props) => {
+
     return (
         <button 
             style={{
                 backgroundColor: props.color,
                 color: props.textColor,
-                ...props.style
+                opacity: 1
             }}
+            className={styles.button}
         >
             {props.text}
         </button>    

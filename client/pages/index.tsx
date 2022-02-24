@@ -7,6 +7,7 @@ import Rooms from '../components/Rooms'
 import UserInfo from '../components/UserInfo'
 import { useSockets } from '../context/socket.context'
 import styles from '../styles/Home.module.css'
+import globalStyles from '../config/styles'
 
 interface IProps {
 
@@ -26,18 +27,19 @@ const Home: FC<IProps> = (props) => {
 
     return (
         <div className={styles.container}>
-            
             <Container style={{ display: 'flex', flexDirection: 'column' }}>
-                
                 <div className={styles.formContainer}>
                     <Input 
                         placeholder='Ex: Rodrigo'
+                        style={{
+                            marginBottom: '1rem'
+                        }}
                     />
 
                     <Button 
                         text='Crear Usuario'
-                        color='#8A2BE2'
-                        textColor='white'
+                        color={globalStyles.colors.primary}
+                        textColor={globalStyles.colors.secondaryLight}
                         onClick={() => {}}                
                     />
                 </div>

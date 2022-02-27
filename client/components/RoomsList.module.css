@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.roomsContainer {
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+}
+
+.roomsContainer a:first-child {
+    margin-left: 0;
+}
+
+.roomButton {
+    width: 8rem;
+    margin-left: 0.5rem;
+}
+
+@media (min-width: 480px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .roomsContainer {
+        flex-direction: column;
+    }
+}

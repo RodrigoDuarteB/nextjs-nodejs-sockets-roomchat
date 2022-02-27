@@ -4,7 +4,7 @@ import Container from '../components/Container'
 import Input from '../components/Input'
 import Messages from '../components/Messages'
 import Rooms from '../components/Rooms'
-import UserInfo from '../components/UserInfo'
+import UserSettings from '../components/UserSettings'
 import { useSockets } from '../context/socket.context'
 import styles from '../styles/Home.module.css'
 import globalStyles from '../config/styles'
@@ -59,7 +59,7 @@ const Home: FC<IProps> = (props) => {
                 :
                 <div className={styles.container}>
                     <div>
-                        <UserInfo />
+                        <UserSettings />
                         <Rooms />
                     </div>
                     <Messages />

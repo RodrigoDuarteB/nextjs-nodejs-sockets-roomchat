@@ -5,12 +5,12 @@ interface IProps {
 
 }
 
-const Rooms: FC<IProps> = (props) => {
+const NoRoom: FC<IProps> = (props) => {
     return (
-        <RoomsLayout>
-            <p>index</p>
+        <RoomsLayout style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <p>Unete a una Sala de chat o crea una!</p>
         </RoomsLayout>
     )
 }
 
-export default Rooms   
+export default NoRoom 

@@ -1,11 +1,14 @@
 import React, { FC, Fragment, useRef, useState } from 'react'
 import { useSockets } from '../context/socket.context'
+import IconButton from './IconButton'
+import { GrUserSettings } from 'react-icons/gr'
+import styles from './UserSettings.module.css'
 
 interface IProps {
 
 }
 
-const UserInfo: FC<IProps> = (props) => {
+const UserSettings: FC<IProps> = (props) => {
     const { username, setUsername } = useSockets()
     const [changing, setChanging] = useState(false)
     const changeRef = useRef<any>(null)
@@ -18,6 +21,16 @@ const UserInfo: FC<IProps> = (props) => {
         }
         setChanging(false)
     }
+
+    return (
+        <div className={styles.container}>
+            <p className={styles.username}>Usuario: Rodrigo#0129</p>
+            <IconButton 
+                icon={<GrUserSettings size={28} color='#000'/>}
+                onClick={() => {}}
+            />
+        </div>
+    )
 
     return username ? (
         <div style={{ display: 'flex' }}>
@@ -34,4 +47,4 @@ const UserInfo: FC<IProps> = (props) => {
     ) : <Fragment />
 }
 
-export default UserInfo
+export default UserSettings

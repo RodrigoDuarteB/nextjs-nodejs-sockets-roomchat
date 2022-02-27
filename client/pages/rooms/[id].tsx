@@ -6,7 +6,7 @@ interface IProps {
 
 }
 
-const Rooms: FC<IProps> = (props) => {
+const Room: FC<IProps> = (props) => {
     const { query } = useRouter()
     const { id } = query
 
@@ -17,4 +17,4 @@ const Rooms: FC<IProps> = (props) => {
     )
 }
 
-export default Rooms
+export default Room

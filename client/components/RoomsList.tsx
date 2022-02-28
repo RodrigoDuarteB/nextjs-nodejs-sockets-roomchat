@@ -13,16 +13,19 @@ interface IProps extends Props{
 const RoomsList: FC<IProps> = (props) => {
     return (
         <div className={styles.container}>
-            <p>{props.title} ({props.rooms.length})</p>
+            <p className={styles.title}>{props.title} ({props.rooms.length})</p>
             <div className={styles.roomsContainer}>
                 {
                     props.rooms.map(room => 
                         <Link href={`/rooms/${room.id}`} key={room.id}>
                             <a className={styles.roomButton}>
                                 <Button 
-                                    text={room.title} 
+                                    text={room.title.length > 8 ? `${room.title.substring(0, 7)}..` : room.title } 
                                     color={'black'} 
-                                    textColor={'white'} 
+                                    textColor={'white'}
+                                    style={{
+                                        width: '8rem'
+                                    }} 
                                     onClick={() => {}} 
                                 />
                             </a>

@@ -19,7 +19,8 @@ const Button: FC<IProps> = (props) => {
             style={{
                 backgroundColor: props.color,
                 color: props.textColor,
-                opacity: 1
+                opacity: 1,
+                ...props.style
             }}
             className={styles.button}
         >

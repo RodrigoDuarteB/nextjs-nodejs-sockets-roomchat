@@ -1,0 +1,14 @@
+.container {
+    padding: 1rem;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.badgesContainer {
+    display: flex;
+    overflow-x: auto;
+    padding: 0.7rem 0;
+}

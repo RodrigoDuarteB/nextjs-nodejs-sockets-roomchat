@@ -1,5 +1,5 @@
 import React, { FC, HTMLInputTypeAttribute } from 'react'
-import { Props } from '../utils/interfaces'
+import { Props } from '../../utils/interfaces'
 import styles from './Input.module.css'
 
 interface IProps extends Props {

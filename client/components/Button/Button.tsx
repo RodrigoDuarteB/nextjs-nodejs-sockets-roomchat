@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Props } from '../utils/interfaces'
+import { Props } from '../../utils/interfaces'
 import styles from './Button.module.css';
 
 interface IProps extends Props {

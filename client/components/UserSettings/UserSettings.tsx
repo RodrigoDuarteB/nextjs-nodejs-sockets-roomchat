@@ -1,6 +1,6 @@
 import React, { FC, Fragment, useRef, useState } from 'react'
-import { useSockets } from '../context/socket.context'
-import IconButton from './IconButton'
+import { useSockets } from '../../context/socket.context'
+import IconButton from '../IconButton/IconButton'
 import { GrUserSettings } from 'react-icons/gr'
 import styles from './UserSettings.module.css'
 

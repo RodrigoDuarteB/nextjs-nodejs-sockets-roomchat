@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Props } from '../utils/interfaces'
+import { Props } from '../../utils/interfaces'
 
 interface IProps extends Props {
     icon: JSX.Element

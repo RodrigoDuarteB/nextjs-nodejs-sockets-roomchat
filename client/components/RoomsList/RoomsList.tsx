@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import React, { FC } from 'react'
-import { Room } from '../models/models'
-import { Props } from '../utils/interfaces'
-import Button from './Button'
+import { Room } from '../../models/models'
+import { Props } from '../../utils/interfaces'
+import Button from '../Button/Button'
 import styles from './RoomsList.module.css'
 
 interface IProps extends Props{
@@ -20,7 +20,7 @@ const RoomsList: FC<IProps> = (props) => {
                         <Link href={`/rooms/${room.id}`} key={room.id}>
                             <a className={styles.roomButton}>
                                 <Button 
-                                    text={room.title.length > 8 ? `${room.title.substring(0, 7)}..` : room.title } 
+                                    text={room.title.length > 8 ? `${room.title.substring(0, 7)}..` : room.title} 
                                     color={'black'} 
                                     textColor={'white'}
                                     style={{

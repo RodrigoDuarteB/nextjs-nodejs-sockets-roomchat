@@ -1,14 +1,13 @@
 import { FC, useEffect, useState } from 'react'
-import styles from '../config/styles'
-import Button from './Button'
-import Container from './Container'
-import Input from './Input'
-import RoomsList from './RoomsList'
-import UserSettings from './UserSettings'
+import styles from '../../config/styles'
+import Button from '../Button/Button'
+import Input from '../Input/Input'
+import RoomsList from '../RoomsList/RoomsList'
+import UserSettings from '../UserSettings/UserSettings'
 import navbarStyles from './MainNavbar.module.css'
-import { Room } from '../models/models'
+import { Room } from '../../models/models'
 import { MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md'
-import IconButton from './IconButton'
+import IconButton from '../IconButton/IconButton'
 
 interface IProps {
 
@@ -25,7 +24,7 @@ const MainNavbar: FC<IProps> = (props) => {
     ]
 
     return (
-        <Container style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className={`container ${navbarStyles.container}`}>
             <CreateRoomContainer visible={expanded}/>
             {expanded &&
                 <div>
@@ -39,7 +38,7 @@ const MainNavbar: FC<IProps> = (props) => {
                     onClick={() => setExpanded(!expanded)}
                 />
             </div>
-        </Container>
+        </div>
     )
 }
 

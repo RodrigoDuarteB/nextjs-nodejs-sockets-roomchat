@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonsContainer {
+    display: flex;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 0.9rem;
+}

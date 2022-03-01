@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
-import RoomsLayout from '../../components/RoomsLayout'
+import { FC } from 'react'
+import RoomsLayout from '../../components/RoomsLayout/RoomsLayout'
 
 interface IProps {
 

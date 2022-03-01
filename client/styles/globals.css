@@ -35,3 +35,14 @@ button.cta {
   background-color: blueviolet;
   white-space: nowrap;
 }
+
+.container {
+  background-color: white;
+  opacity: 0.85;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+p {
+  margin: 0;
+}

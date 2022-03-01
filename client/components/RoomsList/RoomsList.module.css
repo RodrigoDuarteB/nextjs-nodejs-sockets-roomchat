@@ -40,5 +40,11 @@
 
     .roomButton {
         margin-left: 0;
+        margin-bottom: 0.7rem;
+    }
+
+    .title {
+        margin: 0;
+        margin-bottom: 0.5rem;
     }
 }

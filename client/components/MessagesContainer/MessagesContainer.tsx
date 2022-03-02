@@ -10,22 +10,28 @@ interface IProps {
 const MessagesContainer: FC<IProps> = ({ messages }) => {
 
     function groupByDate(messages: Array<IMessage>): Array<DateMessages> {
-        /* const groups = messages.reduce((groups, msg) => {
-            const date = msg.datetime.toString()
+        const groups = messages.reduce<any>((groups, msg) => {
+            const date = msg.datetime.toLocaleDateString()
             if (!groups[date]) {
                 groups[date] = []
             }
-            groups[date].push(game)
+            groups[date].push(msg)
             return groups
-        }, {}) */
-        return []
+        }, {})
+
+        return Object.keys(groups).map(date => {
+            return {
+                date,
+                messages: groups[date] as Array<IMessage>
+            }
+        })
     }
 
     return (
         <div className={styles.container}>
             {
                 groupByDate(messages).map(msgs => 
-                    <GroupedMessages key={msgs.date.toDateString()} data={msgs}/>    
+                    <GroupedMessages key={msgs.date} data={msgs}/>    
                 )
             }
         </div>

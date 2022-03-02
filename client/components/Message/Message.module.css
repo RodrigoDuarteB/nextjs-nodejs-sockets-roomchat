@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    max-width: calc(100% - 4rem);
+    border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.own {
+    align-self: flex-end;
+    border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.container:last-child {
+    margin-bottom: 0;
+}
+
+.username {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time {
+    align-self: flex-end;
+}

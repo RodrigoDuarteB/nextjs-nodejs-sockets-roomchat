@@ -30,7 +30,7 @@ const Room: FC<IProps> = (props) => {
         {id: '2', datetime: new Date(), message: 'Todo bien!', sendedBy: 'Anthony', state: ''},
         {id: '3', datetime: new Date(), message: 'Cuándo nos reunimos??', sendedBy: 'Anthony', state: ''},
         {id: '4', datetime: new Date(), message: 'No sé digan cuando pueden loco', sendedBy: 'Rodrigo', state: ''},
-        {id: '5', datetime: new Date(), message: 'Yo puedo mañana', sendedBy: 'Boris', state: ''},
+        {id: '5', datetime: new Date(2022, 3, 2), message: 'Yo puedo mañana', sendedBy: 'Boris', state: ''},
     ]
 
     return (

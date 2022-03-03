@@ -17,9 +17,13 @@ const GroupedMessages: FC<IProps> = ({ data }) => {
         <div className={styles.container}>
             <p className={styles.date}>{data.date}</p>
             {
-                data.messages.map(msg => 
-                    <Message key={msg.id} message={msg} />    
-                )
+                data.messages.map((msg, index, msgs) => 
+                    <Message 
+                        key={msg.id} 
+                        message={msg} 
+                        sameLastUser={index > 0 && (msgs[index-1].sendedBy === msg.sendedBy)}
+                    /> 
+                )                    
             }
         </div>
     )

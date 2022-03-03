@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     background-color: grey;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
     width: fit-content;
     max-width: calc(100% - 4rem);
@@ -14,15 +14,33 @@
     border-radius: 1.5rem 0 0 1.5rem;
 }
 
-.container:last-child {
-    margin-bottom: 0;
+.container:first-child {
+    margin-top: 0;
 }
 
-.username {
+.top {
     display: flex;
     justify-content: space-between;
 }
 
 .time {
-    align-self: flex-end;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sameLastUser {
+    margin-top: 0.2rem;
+}
+
+.usernameHidden {
+    visibility: hidden;
+}
+
+.message {
+    padding: 0.3rem 0.3rem 0.3rem 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
 }

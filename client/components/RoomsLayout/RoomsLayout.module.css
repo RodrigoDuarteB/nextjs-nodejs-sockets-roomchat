@@ -6,7 +6,7 @@
 
 .subcontainer {
     margin: 0.5rem;
-    height: 100vh;
+    height: 100%;
 }
 
 @media (min-width: 480px) {

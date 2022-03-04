@@ -13,12 +13,9 @@ const RoomsLayout: FC<IProps> = (props) => {
         <div className={styles.container}>
             <MainNavbar />
 
-            <div className={`container ${styles.subcontainer}`}>
+            <div className={`container ${styles.subcontainer}`} style={props.style}>
                 {props.children}
             </div>
-            {/* <Container style={{ margin: '0.5rem', width: '100%', ...props.style }}>
-                {props.children}
-            </Container> */}
         </div>
     )
 }

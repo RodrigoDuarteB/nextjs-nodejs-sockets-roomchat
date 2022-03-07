@@ -1,3 +1,5 @@
+import { MutableRefObject } from 'react';
+
 export interface User {
     username: string
     color?: string
@@ -18,4 +20,5 @@ export interface Message {
     datetime: Date
     state: string
     responseTo?: Message
+    ref?: MutableRefObject<any>
 }

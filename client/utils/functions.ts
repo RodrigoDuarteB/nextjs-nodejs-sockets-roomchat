@@ -1,3 +1,5 @@
+import { MutableRefObject } from "react"
+
 /* 
     returns true if both dates are equals just by date
 */
@@ -21,4 +23,13 @@ export function getFormattedTime(date: Date): string {
         minutes = `0${minutes}`
     }
     return `${hours}:${minutes}`
+}
+
+
+/* 
+    Scrolls to a referenced element
+*/
+export function scrollToRef (ref?: MutableRefObject<any>) {
+    if(ref)
+    window.scrollTo(0, ref.current.offsetTop)
 }

@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: darkgray;
+    margin-bottom: 0.4rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    max-width: calc(100% - 4rem);
+}
+
+.messageContainer {
+    background-color: darkslategray;
+    margin-top: 0.3rem;
+    padding: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.message {
+    padding-left: 0.3rem;
+}

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import Button from '../../components/Button/Button'
 import Input from '../../components/Input/Input'
 import MessagesContainer from '../../components/MessagesContainer/MessagesContainer'
@@ -29,7 +29,7 @@ const Room: FC<IProps> = (props) => {
         {id: '1', datetime: new Date(), message: 'Hola como van', sendedBy: 'Javier', state: ''},
         {id: '2', datetime: new Date(), message: 'Todo bien!', sendedBy: 'Anthony', state: ''},
         {id: '3', datetime: new Date(), message: 'Cuándo nos reunimos??', sendedBy: 'Anthony', state: ''},
-        {id: '4', datetime: new Date(), message: 'No sé digan cuando pueden loco', sendedBy: 'Rodrigo', state: ''},
+        {id: '4', datetime: new Date(), message: 'No sé digan cuando pueden loco', sendedBy: 'Rodrigo', state: '', responseTo: {id: '3', datetime: new Date(), message: 'Cuándo nos reunimos??', sendedBy: 'Anthony', state: ''}},
         {id: '5', datetime: new Date(), message: 'Yo puedo mañana', sendedBy: 'Rodrigo', state: ''},
         {id: '6', datetime: new Date(2022, 3, 2), message: 'Yo puedo mañana', sendedBy: 'Boris', state: ''},
     ]
@@ -37,13 +37,15 @@ const Room: FC<IProps> = (props) => {
     return (
         <RoomsLayout>
             <div className={localStyles.container}>
-                <RoomInfo room={{
-                    id: '1',
-                    createdAt: new Date(),
-                    createdBy: 'Jorge',
-                    messages: [],
-                    title: 'Amigos 2021'
-                }}/>
+                <RoomInfo 
+                    room={{
+                        id: '1',
+                        createdAt: new Date(),
+                        createdBy: 'Jorge',
+                        messages: [],
+                        title: 'Amigos 2021'
+                    }}
+                />
                 <UsersRoom users={users}/>
                 <MessagesContainer messages={messages}/>
                 <MessageForm />

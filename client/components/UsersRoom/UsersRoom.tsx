@@ -15,10 +15,13 @@ const UsersRoom: FC<IProps> = ({ users }) => {
         <div className={localStyles.container} style={{ backgroundColor: styles.colors.secondary }}>
             <div className={localStyles.titleContainer}>
                 <p>Usuarios Conectados ({users.length})</p>
-                <IconButton 
-                    icon={<MdOutlineExpandLess size={25}/>}
-                    onClick={() => {}}
-                />
+                
+                <div className={localStyles.expandButton}>
+                    <IconButton 
+                        icon={<MdOutlineExpandLess size={25}/>}
+                        onClick={() => {}}
+                    />
+                </div>
             </div>
 
             <hr />

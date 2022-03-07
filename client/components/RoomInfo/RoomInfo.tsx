@@ -12,16 +12,19 @@ interface IProps {
 const RoomInfo: FC<IProps> = ({ room }) => {
     return (
         <div className={styles.container}>
-            <div>
+            <div className={styles.info}>
                 <p className={styles.title}>{room.title}</p>
                 <p className={styles.description}>Creado el {room.createdAt.toDateString()} por {room.createdBy}</p>
             </div>
 
             <div className={styles.buttonsContainer}>
-                <IconButton 
-                    icon={<BiLogOut size={25}/>}
-                    onClick={() => {}}
-                />
+                <div className={styles.leaveButton}>
+                    <IconButton 
+                        icon={<BiLogOut size={25}/>}
+                        onClick={() => {}}
+                    />
+                </div>
+                
                 <IconButton
                     icon={<HiDotsVertical size={25}/>}
                     onClick={() => {}}

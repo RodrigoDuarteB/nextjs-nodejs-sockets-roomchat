@@ -37,18 +37,28 @@ const Room: FC<IProps> = (props) => {
     return (
         <RoomsLayout>
             <div className={localStyles.container}>
-                <RoomInfo 
-                    room={{
-                        id: '1',
-                        createdAt: new Date(),
-                        createdBy: 'Jorge',
-                        messages: [],
-                        title: 'Amigos 2021'
-                    }}
-                />
-                <UsersRoom users={users}/>
-                <MessagesContainer messages={messages}/>
-                <MessageForm />
+                <div className={localStyles.subcontainer}>
+                    <RoomInfo 
+                        room={{
+                            id: '1',
+                            createdAt: new Date(),
+                            createdBy: 'Jorge',
+                            messages: [],
+                            title: 'Amigos 2021'
+                        }}
+                    />
+                    <div className={localStyles.mobileUsers}>
+                        <UsersRoom users={users}/>
+                    </div>
+                    <MessagesContainer messages={messages}/>
+                    <MessageForm />
+                </div>
+
+                <div className={localStyles.desktopUsers}>
+                    <Button text={'Dejar Sala'} color={styles.colors.primary} textColor={'white'} onClick={() => {}} />
+
+                    <UsersRoom users={users}/>
+                </div>
             </div>
         </RoomsLayout>
     )

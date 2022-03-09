@@ -8,6 +8,7 @@ import UserSettings from '../components/UserSettings/UserSettings'
 import { useSockets } from '../context/socket.context'
 import styles from '../styles/Home.module.css'
 import globalStyles from '../config/styles'
+import { useWindowSize } from '../utils/hooks'
 
 interface IProps {
 

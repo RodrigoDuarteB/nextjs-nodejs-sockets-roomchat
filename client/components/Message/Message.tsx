@@ -5,7 +5,7 @@ import { HiDotsVertical } from 'react-icons/hi'
 import { IoArrowUndoSharp } from 'react-icons/io5'
 import styles from './Message.module.css'
 import { getFormattedTime } from '../../utils/functions'
-import MessageResponded from '../MessageResponded/MessageResponded'
+import RepliedMessage from '../RepliedMessage/RepliedMessage'
 
 interface IProps {
     message: IMessage
@@ -21,7 +21,7 @@ const Message: FC<IProps> = ({ message, sameLastUser }) => {
         <div className={`${styles.container} ${message.sendedBy === user && styles.own} ${sameLastUser && styles.sameLastUser}`} ref={ref}>
 
             { message.responseTo && 
-                <MessageResponded message={message.responseTo} />
+                <RepliedMessage message={message.responseTo} />
             }
 
             <div className={`${styles.messageContainer} ${message.sendedBy === user && styles.ownBorder}`}>

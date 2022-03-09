@@ -1,13 +1,13 @@
 import { FC, MutableRefObject } from 'react'
 import { Message } from '../../models/models'
 import { scrollToRef } from '../../utils/functions'
-import styles from './MessageResponded.module.css'  
+import styles from './RepliedMessage.module.css'  
 
 interface IProps {
     message: Message
 }
 
-const MessageResponded: FC<IProps> = ({ message }) => {
+const RepliedMessage: FC<IProps> = ({ message }) => {
     const user = 'Rodrigo'
 
     return (
@@ -22,4 +22,4 @@ const MessageResponded: FC<IProps> = ({ message }) => {
     )
 }
 
-export default MessageResponded
+export default RepliedMessage

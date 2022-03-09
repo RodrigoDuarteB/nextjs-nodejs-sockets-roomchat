@@ -8,6 +8,7 @@ import navbarStyles from './MainNavbar.module.css'
 import { Room } from '../../models/models'
 import { MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md'
 import IconButton from '../IconButton/IconButton'
+import { useWindowSize } from '../../utils/hooks'
 
 interface IProps {
 
@@ -15,6 +16,8 @@ interface IProps {
 
 const MainNavbar: FC<IProps> = (props) => {
     const [expanded, setExpanded] = useState(true)
+    const { width } = useWindowSize()
+    
     const rooms: Array<Room> = [
         { id: '1', createdAt: new Date(), createdBy: '1', title: 'Sala de Rodrigo', messages: [] },
         { id: '2', createdAt: new Date(), createdBy: '2', title: 'Sala de Javier', messages: [] },
@@ -22,6 +25,12 @@ const MainNavbar: FC<IProps> = (props) => {
         { id: '4', createdAt: new Date(), createdBy: '4', title: 'Sobre la tercera guerra mundial', messages: [] },
         { id: '5', createdAt: new Date(), createdBy: '5', title: 'Tareas', messages: [] },
     ]
+
+    useEffect(() => {
+        if(width >= 480){
+            setExpanded(true)
+        }
+    }, [width, expanded])
 
     return (
         <div className={`container ${navbarStyles.container}`}>

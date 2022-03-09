@@ -16,6 +16,6 @@
 
     .subcontainer {
         height: auto;
-        width: 100vw;
+        flex-grow: 1;
     }
 }

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import Button from '../../components/Button/Button'
 import Input from '../../components/Input/Input'
 import MessagesContainer from '../../components/MessagesContainer/MessagesContainer'

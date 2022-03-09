@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { Props } from '../../utils/interfaces'
-import Container from '../Container'
 import MainNavbar from '../MainNavbar/MainNavbar'
 import styles from './RoomsLayout.module.css'
 

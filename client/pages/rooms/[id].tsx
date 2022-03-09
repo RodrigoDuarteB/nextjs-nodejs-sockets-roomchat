@@ -67,7 +67,7 @@ const Room: FC<IProps> = (props) => {
 const MessageForm: FC = () => {
     return (
         <div className={localStyles.formContainer}>
-            <Input placeholder='Que estás Pensando?' />
+            <Input placeholder='Que estás Pensando?' style={{ width: '100%' }}/>
             <Button 
                 text={'Enviar'} 
                 color={styles.colors.primary} 

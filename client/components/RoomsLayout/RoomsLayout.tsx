@@ -7,13 +7,15 @@ interface IProps extends Props {
 
 }
 
-const RoomsLayout: FC<IProps> = (props) => {
+const RoomsLayout: FC<IProps> = ({ children, style }) => {
     return (
         <div className={styles.container}>
             <MainNavbar />
 
-            <div className={`container ${styles.subcontainer}`} style={props.style}>
-                {props.children}
+            <div className={styles.content}>
+                <div className={`container ${styles.contentContainer}`} style={style}>
+                    {children}
+                </div>
             </div>
         </div>
     )
